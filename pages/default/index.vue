@@ -4,7 +4,6 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import { getMyInfo } from '~/api/user';
 
 export default defineComponent({
   async asyncData({ store, $axios }) {
