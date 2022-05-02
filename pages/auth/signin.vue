@@ -45,8 +45,6 @@
 
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/composition-api';
-import { signin } from '~/api/auth';
-import * as Cookies from 'js-cookie';
 
 export default defineComponent({
   setup() {
