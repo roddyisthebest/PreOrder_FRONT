@@ -201,7 +201,7 @@ export default defineComponent({
           nickname: this.nickname,
         };
         await this.$axios.post('/user', {
-          body,
+          ...body,
         });
         this.$store.commit(
           'user/addEmail',
