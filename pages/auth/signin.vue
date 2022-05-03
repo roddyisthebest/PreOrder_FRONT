@@ -62,12 +62,16 @@ export default defineComponent({
     async login() {
       try {
         const body = { email: this.id, password: this.password };
-        const { data } = await this.$axios.post('/user/authentication', {
-          ...body,
-        });
-        this.$axios.setToken(data.accessToken, 'Bearer');
-        this.$store.commit('auth/addAsscessToken', data.accessToken);
-        this.$router.push('/default');
+        const { data: tokenData } = await this.$axios.post(
+          '/user/authentication',
+          {
+            ...body,
+          }
+        );
+        this.$store.commit('auth/addAsscessToken', tokenData.accessToken);
+        const { data: infoData } = await this.$axios.get('/user');
+        this.$store.commit('user/addInfo', infoData);
+        this.$router.push('/home');
       } catch (e) {
         console.log(e);
       }

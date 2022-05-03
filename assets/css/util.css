@@ -2,8 +2,17 @@
   font-family: 'Gothic A1', sans-serif;
 }
 
+body {
+  margin: 0;
+}
 #container {
   padding: 50px;
+}
+
+.buttonPure {
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
 }
 
 #button {

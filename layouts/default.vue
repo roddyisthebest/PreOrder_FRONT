@@ -1,16 +1,19 @@
 <template>
   <div>
-    <div>{{ testData }}</div>
-    <div>{{ getData }}</div>
+    <Navbar />
     <nuxt></nuxt>
   </div>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent, ref } from '@vue/composition-api';
+import Navbar from '~/components/default/Navbar.vue';
 
 export default defineComponent({
   middleware: ['authenticate'],
+  components: {
+    Navbar,
+  },
   setup() {
     const testData = ref<string>('hello');
     const getData = computed(() => testData.value.length);
@@ -18,3 +21,5 @@ export default defineComponent({
   },
 });
 </script>
+
+<style scoped></style>

@@ -14,7 +14,7 @@ export default defineComponent({
       data,
     };
   },
-  layout: 'default',
+  layout: 'home',
 });
 </script>
 
