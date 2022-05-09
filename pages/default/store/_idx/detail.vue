@@ -70,7 +70,7 @@ import VueDaumMap from 'vue-daum-map';
 export default defineComponent({
   setup() {
     return {
-      appKey: '397a1649388899b74fe012e8d0138228',
+      appKey: '',
       center: { lat: 35.8666799, lng: 128.7315022 },
       level: 2,
       mapTypeId: VueDaumMap.MapTypeId.NORMAL,
