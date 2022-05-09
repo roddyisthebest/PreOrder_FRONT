@@ -12,12 +12,16 @@
       </div>
       <div id="contentsRight">
         <button class="buttonPure white">
-          <span id="alarmAmount">5</span>
-          <span class="material-icons size">notifications_none</span>
+          <nuxt-link to="/default/notification">
+            <span id="alarmAmount">5</span>
+            <span class="material-icons size">notifications_none</span>
+          </nuxt-link>
         </button>
         <span id="buttonBlock"></span>
         <button class="buttonPure white">
-          <span class="material-icons size">menu</span>
+          <nuxt-link to="/default/menu">
+            <span class="material-icons size">menu</span>
+          </nuxt-link>
         </button>
       </div>
     </div>
@@ -42,7 +46,8 @@ export default defineComponent({
   position: sticky;
   background-color: #42b883;
   top: 0;
-  height: 200px;
+  height: 170px;
+  z-index: 500;
 }
 
 #contentsHeader {
@@ -101,7 +106,7 @@ export default defineComponent({
   right: 3px;
 }
 .size {
-  font-size: 65px;
+  font-size: 60px;
 }
 
 #contentsLeft {

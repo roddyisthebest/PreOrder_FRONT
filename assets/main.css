@@ -1,0 +1,8 @@
+.home-enter-active,
+.home-leave-active {
+  transition: opacity 0.5s;
+}
+.home-enter,
+.home-leave-to {
+  opacity: 0;
+}

@@ -6,17 +6,18 @@
       </button>
     </div>
     <div id="center" class="align-center">
-      <span id="currentPathText"> 주문 내역 </span>
+      <span id="currentPathText"> {{ title }}</span>
     </div>
     <div id="right" class="align-center">
-      <button class="buttonPure white">
+      <slot name="rightMenu"></slot>
+      <!-- <button class="buttonPure white">
         <span id="alarmAmount">5</span>
         <span class="material-icons iconSize">notifications_none</span>
       </button>
       <span id="buttonBlock"></span>
       <button class="buttonPure white">
         <span class="material-icons iconSize">menu</span>
-      </button>
+      </button> -->
     </div>
   </div>
 </template>
@@ -25,6 +26,9 @@
 import { defineComponent } from '@vue/composition-api';
 
 export default defineComponent({
+  props: {
+    title: String,
+  },
   methods: {
     goBack() {
       return this.$router.back();
@@ -58,34 +62,13 @@ export default defineComponent({
   align-items: center;
 }
 
-.iconSize {
-  font-size: 60px;
-}
-
 #currentPathText {
   color: black;
   font-size: 50px;
   font-weight: 600;
 }
 
-#alarmAmount {
-  width: 25px;
-  height: 25px;
-  background-color: black;
-  border: 5px solid;
-  border-color: white;
-  border-radius: 20px;
-  position: absolute;
-  top: 0;
-  right: 3px;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#buttonBlock {
-  height: 35%;
-  width: 3px;
-  background-color: #00000053;
+.iconSize {
+  font-size: 60px;
 }
 </style>

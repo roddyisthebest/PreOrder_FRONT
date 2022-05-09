@@ -113,9 +113,7 @@ import { schoolListType } from '~/types/asset';
 export default defineComponent({
   async asyncData({ $axios }) {
     try {
-      const { data }: { data: schoolListType[] } = await $axios.get(
-        '/user/schools'
-      );
+      const { data }: { data: schoolListType[] } = await $axios.get('/schools');
       return { schoolList: data };
     } catch (e) {
       console.log(e);
@@ -200,7 +198,7 @@ export default defineComponent({
           schoolIdx: this.schoolInfo.idx,
           nickname: this.nickname,
         };
-        await this.$axios.post('/user', {
+        await this.$axios.post('/', {
           ...body,
         });
         this.$store.commit(
@@ -222,6 +220,14 @@ export default defineComponent({
         this.schoolInfo.domain.length !== 0 &&
         this.nickname.length !== 0
       );
+    },
+    searchUniv() {
+      return (name: string) => {
+        if (name.length === 0) {
+          return [];
+        }
+        return this.schoolList.filter((school) => school.name.includes(name));
+      };
     },
   },
   layout: 'auth',
