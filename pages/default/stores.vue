@@ -129,13 +129,7 @@ export default defineComponent({
   font-size: 30px;
 }
 
-select::-ms-expand {
-  display: none;
-}
 
-select:focus {
-  outline: none;
-}
 
 .filterIconSize {
   font-size: 40px;

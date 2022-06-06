@@ -64,14 +64,14 @@ export default defineComponent({
 }
 
 #contentsImg {
-  background-image: url('https://mblogthumb-phinf.pstatic.net/20161004_182/by267_1475545735828gzWay_JPEG/%BC%AD%BF%EF%B4%EB%C7%D0%B1%B3%B7%CE%B0%ED-01.jpg?type=w800');
+  background-image: url('https://w.namu.la/s/6e36ae14895a6c7b78c2d9df5548337e62f8e3cd631d3cb015cd31cfe129d82c74fe66f0bff7d848a5d2dc9bf59b6f4a252f4e4e2ee4877ef68bb54ccde926982d539bd9249c859144b31194093d8efdb70264d38db455e47c514fc9c4c31f03');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: contain;
   width: 70px;
   height: 100%;
   border-radius: 10px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); */
 }
 
 .mt-5 {

@@ -1,10 +1,12 @@
 <template>
-  <div class="Container">
+  <nuxt-link :to="`/default/food/${idx}`" class="Container">
     <div class="up">
       <div class="foodImage"></div>
     </div>
     <div class="down">
-      <h4 class="title">햄버거</h4>
+      <div :style="{ marginVertical: 10, display: 'flex' }">
+        <span class="title">햄버거</span>
+      </div>
       <div class="align-center">
         <div class="align-center info">
           <span class="material-icons size">local_atm</span>
@@ -12,13 +14,16 @@
         </div>
       </div>
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
 
 export default defineComponent({
+  props: {
+    idx: Number,
+  },
   setup() {},
 });
 </script>
@@ -30,6 +35,9 @@ export default defineComponent({
   flex-direction: column;
   gap: 20px 0;
   flex: 1;
+  border: none;
+  background: none;
+  width: 40%;
 }
 .up {
   flex: 4;
@@ -51,6 +59,7 @@ export default defineComponent({
 }
 
 .title {
+  text-align: start;
   font-size: 50px;
   font-weight: 600;
   color: black;
@@ -61,9 +70,6 @@ export default defineComponent({
   font-size: 40px;
   color: black;
   font-weight: 300;
-}
-
-.infoWrapper {
 }
 
 .align-center {

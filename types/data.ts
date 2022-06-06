@@ -4,4 +4,6 @@ interface data {
   message: string;
 }
 
+
+
 export default data;

@@ -1,30 +1,23 @@
 <template>
   <div>
-    <div class="storeBackground">
-      <div class="storeNavigationColumn">
-        <div class="storeNavigationItems">
-          <button class="darkButton" @click="goBack">
+    <BackgroundNavbar
+      :imageUrl="'https://mblogthumb-phinf.pstatic.net/20161001_180/lyl0408_1475302048766jXram_JPEG/DSC_0321.jpg?type=w2'"
+    >
+      <template v-slot:rightNavigations>
+        <button class="darkButton">
+          <span class="material-icons darkButtonText backIcon"
+            >favorite_outline</span
+          >
+        </button>
+        <button class="darkButton">
+          <nuxt-link :to="`/default/store/2/detail`">
             <span class="material-icons darkButtonText backIcon"
-              >arrow_back</span
+              >info_outline</span
             >
-          </button>
-        </div>
-        <div class="storeNavigationItems">
-          <button class="darkButton">
-            <span class="material-icons darkButtonText backIcon"
-              >favorite_outline</span
-            >
-          </button>
-          <button class="darkButton">
-            <nuxt-link :to="`/default/store/${idx}/detail`">
-              <span class="material-icons darkButtonText backIcon"
-                >info_outline</span
-              >
-            </nuxt-link>
-          </button>
-        </div>
-      </div>
-    </div>
+          </nuxt-link>
+        </button>
+      </template>
+    </BackgroundNavbar>
     <div class="storeContents">
       <StoreInfo
         :status="'혼잡'"
@@ -43,14 +36,14 @@
         <span class="storeFilterText"> 8 dishes</span>
       </div>
       <div class="menu">
-        <FoodSale />
-        <FoodSale />
-        <FoodSale />
-        <FoodSale />
-        <FoodSale />
-        <FoodSale />
-        <FoodSale />
-        <FoodSale />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
+        <FoodSale :idx="2" />
       </div>
     </div>
   </div>
@@ -60,12 +53,13 @@
 import { defineComponent } from '@vue/composition-api';
 import StoreInfo from '~/components/util/StoreInfo.vue';
 import FoodSale from '~/components/util/FoodSale.vue';
+import BackgroundNavbar from '~/components/default/BackgroundNavbar.vue';
 
 export default defineComponent({
   data() {
     return { idx: '' };
   },
-  components: { StoreInfo, FoodSale },
+  components: { StoreInfo, FoodSale, BackgroundNavbar },
   methods: {
     goBack() {
       this.$router.back();
@@ -81,25 +75,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.storeBackground {
-  height: 500px;
-  width: 100%;
-  background-image: url('https://mblogthumb-phinf.pstatic.net/20161001_180/lyl0408_1475302048766jXram_JPEG/DSC_0321.jpg?type=w2');
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  padding: 50px;
-}
-.storeNavigationColumn {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 30px;
-}
-.storeNavigationItems {
-  display: flex;
-  gap: 0 20px;
-}
 .darkButtonText {
   font-size: 50px;
   color: white;
